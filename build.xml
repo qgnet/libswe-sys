@@ -8,4 +8,4 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="ProgrammingA4" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Programm
+    <description>Builds, tests, and runs the project ProgrammingA4.</des
