@@ -16,4 +16,5 @@
     used for execution of your tasks. These targets are usually executed 
     before and after some main targets. They are: 
 
-      -pre-init:                 called before initialization of project propert
+      -pre-init:                 called before initialization of project properties
+      
