@@ -17,4 +17,5 @@
     before and after some main targets. They are: 
 
       -pre-init:                 called before initialization of project properties
-      -post-init:                called after initialization of project properti
+      -post-init:                called after initialization of project properties
+      -pre
