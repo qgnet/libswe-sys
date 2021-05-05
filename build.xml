@@ -20,4 +20,4 @@
       -post-init:                called after initialization of project properties
       -pre-compile:              called before javac compilation
       -post-compile:             called after javac compilation
-      -pre-compile-single:       called before javac compilation
+      -pre-compile-single:       called before javac compilation of sin
