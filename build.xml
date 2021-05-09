@@ -21,4 +21,4 @@
       -pre-compile:              called before javac compilation
       -post-compile:             called after javac compilation
       -pre-compile-single:       called before javac compilation of single file
-      -post-compile-single:    
+      -post-compile-single:      called aft
