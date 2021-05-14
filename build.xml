@@ -22,4 +22,4 @@
       -post-compile:             called after javac compilation
       -pre-compile-single:       called before javac compilation of single file
       -post-compile-single:      called after javac compilation of single file
-      -pre-compile-test:         called
+      -pre-compile-test:         called before 
