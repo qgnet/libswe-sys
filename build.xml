@@ -23,4 +23,4 @@
       -pre-compile-single:       called before javac compilation of single file
       -post-compile-single:      called after javac compilation of single file
       -pre-compile-test:         called before javac compilation of JUnit tests
-     
+      -post-com
