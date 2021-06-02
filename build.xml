@@ -25,4 +25,4 @@
       -pre-compile-test:         called before javac compilation of JUnit tests
       -post-compile-test:        called after javac compilation of JUnit tests
       -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile
+      -post-compile-test-single: cal
