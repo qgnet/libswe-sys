@@ -26,4 +26,4 @@
       -post-compile-test:        called after javac compilation of JUnit tests
       -pre-compile-test-single:  called before javac compilation of single JUnit test
       -post-compile-test-single: called after javac compilation of single JUunit test
-      -pre-jar:                  called b
+      -pre-jar:                  called before JAR bui
