@@ -28,4 +28,5 @@
       -post-compile-test-single: called after javac compilation of single JUunit test
       -pre-jar:                  called before JAR building
       -post-jar:                 called after JAR building
-      -post-clean:               called after cleaning build 
+      -post-clean:               called after cleaning build products
+
