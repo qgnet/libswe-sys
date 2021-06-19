@@ -30,4 +30,4 @@
       -post-jar:                 called after JAR building
       -post-clean:               called after cleaning build products
 
-    (Target
+    (Targets beginni
