@@ -32,4 +32,6 @@
 
     (Targets beginning with '-' are not intended to be called on their own.)
 
-    Example of inserting an obfuscator after compilation could look like this
+    Example of inserting an obfuscator after compilation could look like this:
+
+      
