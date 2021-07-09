@@ -36,4 +36,4 @@
 
         <target name="-post-compile">
             <obfuscate>
-                <filese
+                <fileset dir="$
