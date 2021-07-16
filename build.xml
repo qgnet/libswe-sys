@@ -37,4 +37,4 @@
         <target name="-post-compile">
             <obfuscate>
                 <fileset dir="${build.classes.dir}"/>
-           
+            </obfuscate
