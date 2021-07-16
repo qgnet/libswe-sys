@@ -38,4 +38,6 @@
             <obfuscate>
                 <fileset dir="${build.classes.dir}"/>
             </obfuscate>
-        </targe
+        </target>
+
+    For lis
