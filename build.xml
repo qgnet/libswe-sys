@@ -48,4 +48,4 @@
     The targets of interest are: 
 
       -init-macrodef-javac:     defines macro for javac compilation
-      -init-macrodef-junit:     defines macro for junit e
+      -init-macrodef-junit:     defines macro for junit executi
