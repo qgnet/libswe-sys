@@ -54,4 +54,4 @@
       -do-jar:                  JAR building
       run:                      execution of project 
       -javadoc-build:           Javadoc generation
-      test-report:              JUnit re
+      test-report:              JUnit report genera
