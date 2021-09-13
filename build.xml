@@ -56,4 +56,4 @@
       -javadoc-build:           Javadoc generation
       test-report:              JUnit report generation
 
-    An example of overriding the target for project execution could look
+    An example of overriding the target for project execution could look like thi
