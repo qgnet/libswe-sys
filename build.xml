@@ -59,4 +59,4 @@
     An example of overriding the target for project execution could look like this:
 
         <target name="run" depends="ProgrammingA4-impl.jar">
-            <exec 
+            <exec dir="bin" e
