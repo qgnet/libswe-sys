@@ -64,4 +64,4 @@
             </exec>
         </target>
 
-    Notice that the overridden target depends on the jar target and 
+    Notice that the overridden target depends on the jar target and not only
