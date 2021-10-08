@@ -65,4 +65,4 @@
         </target>
 
     Notice that the overridden target depends on the jar target and not only on 
-    the compile target as the regular run targ
+    the compile target as the regular run target doe
