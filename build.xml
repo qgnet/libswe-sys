@@ -65,4 +65,5 @@
         </target>
 
     Notice that the overridden target depends on the jar target and not only on 
-    the compile target as the regular run target does. Again, for a list of ava
+    the compile target as the regular run target does. Again, for a list of available 
+ 
