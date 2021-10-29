@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-X-COMMENT: Main
+X-COMMENT: Main-Class 
