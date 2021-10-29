@@ -1,1 +1,1 @@
-Mani
+Manifest-Version:
