@@ -100,3 +100,15 @@ is divided into following sections:
         <condition property="do.archive+manifest.available">
             <and>
                 <isset property="manifest.available"/>
+                <istrue value="${do.archive}"/>
+            </and>
+        </condition>
+        <condition property="do.archive+main.class.available">
+            <and>
+                <isset property="main.class.available"/>
+                <istrue value="${do.archive}"/>
+            </and>
+        </condition>
+        <condition property="do.archive+splashscreen.available">
+            <and>
+                <isset property="splashscreen.available"/>
