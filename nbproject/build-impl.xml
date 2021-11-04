@@ -122,3 +122,10 @@ is divided into following sections:
             </and>
         </condition>
         <condition property="have.tests">
+            <or>
+                <available file="${test.src.dir}"/>
+            </or>
+        </condition>
+        <condition property="have.sources">
+            <or>
+                <available file="${src.dir}"/>
