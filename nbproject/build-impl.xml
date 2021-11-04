@@ -112,3 +112,13 @@ is divided into following sections:
         <condition property="do.archive+splashscreen.available">
             <and>
                 <isset property="splashscreen.available"/>
+                <istrue value="${do.archive}"/>
+            </and>
+        </condition>
+        <condition property="do.archive+profile.available">
+            <and>
+                <isset property="profile.available"/>
+                <istrue value="${do.archive}"/>
+            </and>
+        </condition>
+        <condition property="have.tests">
