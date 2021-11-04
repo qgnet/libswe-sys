@@ -129,3 +129,11 @@ is divided into following sections:
         <condition property="have.sources">
             <or>
                 <available file="${src.dir}"/>
+            </or>
+        </condition>
+        <condition property="netbeans.home+have.tests">
+            <and>
+                <isset property="netbeans.home"/>
+                <isset property="have.tests"/>
+            </and>
+        </condition>
