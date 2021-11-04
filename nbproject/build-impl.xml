@@ -71,3 +71,10 @@ is divided into following sections:
                 <not>
                     <equals arg1="${main.class}" arg2="" trim="true"/>
                 </not>
+            </and>
+        </condition>
+        <condition property="profile.available">
+            <and>
+                <isset property="javac.profile"/>
+                <length length="0" string="${javac.profile}" when="greater"/>
+                <matches pattern="((1\.[89])|9)(\..*)?" string="${javac.source}"/>
