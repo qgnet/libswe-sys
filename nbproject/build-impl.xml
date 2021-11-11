@@ -236,3 +236,18 @@ is divided into following sections:
         <fail unless="build.dir">Must set build.dir</fail>
         <fail unless="dist.dir">Must set dist.dir</fail>
         <fail unless="build.classes.dir">Must set build.classes.dir</fail>
+        <fail unless="dist.javadoc.dir">Must set dist.javadoc.dir</fail>
+        <fail unless="build.test.classes.dir">Must set build.test.classes.dir</fail>
+        <fail unless="build.test.results.dir">Must set build.test.results.dir</fail>
+        <fail unless="build.classes.excludes">Must set build.classes.excludes</fail>
+        <fail unless="dist.jar">Must set dist.jar</fail>
+    </target>
+    <target name="-init-macrodef-property">
+        <macrodef name="property" uri="http://www.netbeans.org/ns/j2se-project/1">
+            <attribute name="name"/>
+            <attribute name="value"/>
+            <sequential>
+                <property name="@{name}" value="${@{value}}"/>
+            </sequential>
+        </macrodef>
+    </target>
