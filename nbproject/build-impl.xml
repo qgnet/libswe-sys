@@ -175,3 +175,11 @@ is divided into following sections:
         </condition>
         <path id="endorsed.classpath.path" path="${endorsed.classpath}"/>
         <condition else="" property="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:'${toString:endorsed.classpath.path}'">
+            <and>
+                <isset property="endorsed.classpath"/>
+                <not>
+                    <equals arg1="${endorsed.classpath}" arg2="" trim="true"/>
+                </not>
+            </and>
+        </condition>
+        <condition else="" property="javac.profile.cmd.line.arg" value="-profile ${javac.profile}">
