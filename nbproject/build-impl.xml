@@ -183,3 +183,12 @@ is divided into following sections:
             </and>
         </condition>
         <condition else="" property="javac.profile.cmd.line.arg" value="-profile ${javac.profile}">
+            <isset property="profile.available"/>
+        </condition>
+        <condition else="false" property="jdkBug6558476">
+            <and>
+                <matches pattern="1\.[56]" string="${java.specification.version}"/>
+                <not>
+                    <os family="unix"/>
+                </not>
+            </and>
