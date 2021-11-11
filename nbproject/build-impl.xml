@@ -154,3 +154,17 @@ is divided into following sections:
         </condition>
         <property name="javac.debug" value="true"/>
         <property name="javadoc.preview" value="true"/>
+        <property name="application.args" value=""/>
+        <property name="source.encoding" value="${file.encoding}"/>
+        <property name="runtime.encoding" value="${source.encoding}"/>
+        <property name="manifest.encoding" value="${source.encoding}"/>
+        <condition property="javadoc.encoding.used" value="${javadoc.encoding}">
+            <and>
+                <isset property="javadoc.encoding"/>
+                <not>
+                    <equals arg1="${javadoc.encoding}" arg2=""/>
+                </not>
+            </and>
+        </condition>
+        <property name="javadoc.encoding.used" value="${source.encoding}"/>
+        <property name="includes" value="**"/>
