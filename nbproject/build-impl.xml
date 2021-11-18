@@ -344,3 +344,11 @@ is divided into following sections:
                 <fail unless="javac.includes">Must set javac.includes</fail>
                 <pathconvert pathsep="${line.separator}" property="javac.includes.binary">
                     <path>
+                        <filelist dir="@{destdir}" files="${javac.includes}"/>
+                    </path>
+                    <globmapper from="*.java" to="*.class"/>
+                </pathconvert>
+                <tempfile deleteonexit="true" property="javac.includesfile.binary"/>
+                <echo file="${javac.includesfile.binary}" message="${javac.includes.binary}"/>
+                <delete>
+                    <files includesfile="${javac.includesfile.binary}"/>
