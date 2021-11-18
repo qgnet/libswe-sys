@@ -385,3 +385,12 @@ is divided into following sections:
             <attribute default="${includes}" name="includes"/>
             <attribute default="${excludes}" name="excludes"/>
             <attribute default="**" name="testincludes"/>
+            <attribute default="" name="testmethods"/>
+            <element name="customize" optional="true"/>
+            <sequential>
+                <property name="junit.forkmode" value="perTest"/>
+                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
+                    <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
+                    <syspropertyset>
+                        <propertyref prefix="test-sys-prop."/>
+                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
