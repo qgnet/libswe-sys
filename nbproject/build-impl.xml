@@ -352,3 +352,12 @@ is divided into following sections:
                 <echo file="${javac.includesfile.binary}" message="${javac.includes.binary}"/>
                 <delete>
                     <files includesfile="${javac.includesfile.binary}"/>
+                </delete>
+                <delete>
+                    <fileset file="${javac.includesfile.binary}"/>
+                </delete>
+            </sequential>
+        </macrodef>
+    </target>
+    <target if="${junit.available}" name="-init-macrodef-junit-init">
+        <condition else="false" property="nb.junit.batch" value="true">
