@@ -470,3 +470,7 @@ is divided into following sections:
             <attribute default="" name="testmethods"/>
             <element implicit="true" name="customize" optional="true"/>
             <sequential>
+                <echo>No tests executed.</echo>
+            </sequential>
+        </macrodef>
+    </target>
