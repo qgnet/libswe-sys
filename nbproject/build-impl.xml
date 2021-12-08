@@ -509,3 +509,9 @@ is divided into following sections:
             <attribute default="**" name="testincludes"/>
             <attribute default="" name="testmethods"/>
             <sequential>
+                <j2seproject3:test-impl excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
+                    <customize>
+                        <classpath>
+                            <path path="${run.test.classpath}"/>
+                        </classpath>
+                        <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
