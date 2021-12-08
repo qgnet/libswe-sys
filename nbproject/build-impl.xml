@@ -496,3 +496,9 @@ is divided into following sections:
             <attribute default="" name="testmethods"/>
             <element implicit="true" name="customize" optional="true"/>
             <sequential>
+                <j2seproject3:testng excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
+                    <customize/>
+                </j2seproject3:testng>
+            </sequential>
+        </macrodef>
+    </target>
