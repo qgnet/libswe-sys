@@ -544,3 +544,9 @@ is divided into following sections:
                     <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
                     <customize/>
                 </junit>
+            </sequential>
+        </macrodef>
+    </target>
+    <target depends="-init-test-properties" if="${nb.junit.batch}" name="-init-macrodef-junit-debug-batch">
+        <macrodef name="junit-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
+            <attribute default="${includes}" name="includes"/>
