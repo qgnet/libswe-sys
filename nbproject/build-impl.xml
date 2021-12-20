@@ -522,3 +522,17 @@ is divided into following sections:
             </sequential>
         </macrodef>
     </target>
+    <target if="${junit.available}" name="-init-macrodef-junit-debug" unless="${nb.junit.batch}">
+        <macrodef name="junit-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
+            <attribute default="${includes}" name="includes"/>
+            <attribute default="${excludes}" name="excludes"/>
+            <attribute default="**" name="testincludes"/>
+            <attribute default="" name="testmethods"/>
+            <element name="customize" optional="true"/>
+            <sequential>
+                <property name="junit.forkmode" value="perTest"/>
+                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
+                    <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
+                    <syspropertyset>
+                        <propertyref prefix="test-sys-prop."/>
+                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
