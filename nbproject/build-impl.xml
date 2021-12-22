@@ -550,3 +550,9 @@ is divided into following sections:
     <target depends="-init-test-properties" if="${nb.junit.batch}" name="-init-macrodef-junit-debug-batch">
         <macrodef name="junit-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
             <attribute default="${includes}" name="includes"/>
+            <attribute default="${excludes}" name="excludes"/>
+            <attribute default="**" name="testincludes"/>
+            <attribute default="" name="testmethods"/>
+            <element name="customize" optional="true"/>
+            <sequential>
+                <property name="junit.forkmode" value="perTest"/>
