@@ -579,3 +579,16 @@ is divided into following sections:
             </sequential>
         </macrodef>
     </target>
+    <target depends="-init-macrodef-junit-debug,-init-macrodef-junit-debug-batch" if="${junit.available}" name="-init-macrodef-junit-debug-impl">
+        <macrodef name="test-debug-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
+            <attribute default="${includes}" name="includes"/>
+            <attribute default="${excludes}" name="excludes"/>
+            <attribute default="**" name="testincludes"/>
+            <attribute default="" name="testmethods"/>
+            <element implicit="true" name="customize" optional="true"/>
+            <sequential>
+                <j2seproject3:junit-debug excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
+                    <customize/>
+                </j2seproject3:junit-debug>
+            </sequential>
+        </macrodef>
