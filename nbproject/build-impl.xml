@@ -604,3 +604,10 @@ is divided into following sections:
                 </condition>
                 <condition else="-suitename ProgrammingA4 -testname @{testClass} ${test.class.or.method}" property="testng.cmd.args" value="@{testClass}">
                     <matches pattern=".*\.xml" string="@{testClass}"/>
+                </condition>
+                <delete dir="${build.test.results.dir}" quiet="true"/>
+                <mkdir dir="${build.test.results.dir}"/>
+                <j2seproject3:debug classname="org.testng.TestNG" classpath="${debug.test.classpath}">
+                    <customize>
+                        <customize2/>
+                        <jvmarg value="-ea"/>
