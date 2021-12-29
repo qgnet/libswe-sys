@@ -624,3 +624,11 @@ is divided into following sections:
         <macrodef name="testng-debug-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
             <attribute default="${main.class}" name="testClass"/>
             <attribute default="" name="testMethod"/>
+            <element implicit="true" name="customize2" optional="true"/>
+            <sequential>
+                <j2seproject3:testng-debug testClass="@{testClass}" testMethod="@{testMethod}">
+                    <customize2/>
+                </j2seproject3:testng-debug>
+            </sequential>
+        </macrodef>
+    </target>
