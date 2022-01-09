@@ -692,3 +692,9 @@ is divided into following sections:
             <attribute name="name"/>
             <attribute name="value"/>
             <sequential>
+                <property name="@{name}" value="${env.@{value}}"/>
+            </sequential>
+        </macrodef>
+        <macrodef name="profile">
+            <attribute default="${main.class}" name="classname"/>
+            <element name="customize" optional="true"/>
