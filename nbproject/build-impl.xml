@@ -717,3 +717,7 @@ is divided into following sections:
                     <customize/>
                 </java>
             </sequential>
+        </macrodef>
+    </target>
+    <target depends="-profile-pre-init, init, -profile-post-init, -profile-init-macrodef-profile" if="profiler.info.jvmargs.agent" name="-profile-init-check">
+        <fail unless="profiler.info.jvm">Must set JVM to use for profiling in profiler.info.jvm</fail>
