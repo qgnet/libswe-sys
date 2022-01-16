@@ -742,3 +742,13 @@ is divided into following sections:
         <macrodef name="nbjpdareload" uri="http://www.netbeans.org/ns/j2se-project/1">
             <attribute default="${build.classes.dir}" name="dir"/>
             <sequential>
+                <nbjpdareload>
+                    <fileset dir="@{dir}" includes="${fix.classes}">
+                        <include name="${fix.includes}*.class"/>
+                    </fileset>
+                </nbjpdareload>
+            </sequential>
+        </macrodef>
+    </target>
+    <target name="-init-debug-args">
+        <property name="version-output" value="java version &quot;${ant.java.version}"/>
