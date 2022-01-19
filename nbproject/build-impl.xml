@@ -788,3 +788,11 @@ is divided into following sections:
                         <path path="@{classpath}"/>
                     </classpath>
                     <syspropertyset>
+                        <propertyref prefix="run-sys-prop."/>
+                        <mapper from="run-sys-prop.*" to="*" type="glob"/>
+                    </syspropertyset>
+                    <customize/>
+                </java>
+            </sequential>
+        </macrodef>
+    </target>
