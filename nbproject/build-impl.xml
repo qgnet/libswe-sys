@@ -810,3 +810,14 @@ is divided into following sections:
                     <jvmarg line="${run.jvmargs}"/>
                     <jvmarg line="${run.jvmargs.ide}"/>
                     <classpath>
+                        <path path="@{classpath}"/>
+                    </classpath>
+                    <syspropertyset>
+                        <propertyref prefix="run-sys-prop."/>
+                        <mapper from="run-sys-prop.*" to="*" type="glob"/>
+                    </syspropertyset>
+                    <customize/>
+                </java>
+            </sequential>
+        </macrodef>
+    </target>
