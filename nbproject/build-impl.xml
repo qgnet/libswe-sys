@@ -866,3 +866,13 @@ is divided into following sections:
         <property name="annotation.processing.run.all.processors" value="true"/>
         <property name="javac.processorpath" value="${javac.classpath}"/>
         <property name="javac.test.processorpath" value="${javac.test.classpath}"/>
+        <condition property="ap.supported.internal" value="true">
+            <not>
+                <matches pattern="1\.[0-5](\..*)?" string="${javac.source}"/>
+            </not>
+        </condition>
+    </target>
+    <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-ap-cmdline-supported">
+        <condition else="" property="ap.processors.internal" value="-processor ${annotation.processing.processors.list}">
+            <isfalse value="${annotation.processing.run.all.processors}"/>
+        </condition>
