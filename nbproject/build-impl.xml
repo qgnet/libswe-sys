@@ -876,3 +876,14 @@ is divided into following sections:
         <condition else="" property="ap.processors.internal" value="-processor ${annotation.processing.processors.list}">
             <isfalse value="${annotation.processing.run.all.processors}"/>
         </condition>
+        <condition else="" property="ap.proc.none.internal" value="-proc:none">
+            <isfalse value="${annotation.processing.enabled}"/>
+        </condition>
+    </target>
+    <target depends="-init-ap-cmdline-properties,-init-ap-cmdline-supported" name="-init-ap-cmdline">
+        <property name="ap.cmd.line.internal" value=""/>
+    </target>
+    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init,-init-check,-init-macrodef-property,-init-macrodef-javac,-init-macrodef-test,-init-macrodef-test-debug,-init-macrodef-nbjpda,-init-macrodef-debug,-init-macrodef-java,-init-presetdef-jar,-init-ap-cmdline" name="init"/>
+    <!--
+                ===================
+                COMPILATION SECTION
