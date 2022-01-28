@@ -887,3 +887,16 @@ is divided into following sections:
     <!--
                 ===================
                 COMPILATION SECTION
+                ===================
+            -->
+    <target name="-deps-jar-init" unless="built-jar.properties">
+        <property location="${build.dir}/built-jar.properties" name="built-jar.properties"/>
+        <delete file="${built-jar.properties}" quiet="true"/>
+    </target>
+    <target if="already.built.jar.${basedir}" name="-warn-already-built-jar">
+        <echo level="warn" message="Cycle detected: ProgrammingA4 was already built"/>
+    </target>
+    <target depends="init,-deps-jar-init" name="deps-jar" unless="no.deps">
+        <mkdir dir="${build.dir}"/>
+        <touch file="${built-jar.properties}" verbose="false"/>
+        <property file="${built-jar.properties}" prefix="already.built.jar."/>
