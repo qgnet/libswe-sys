@@ -932,3 +932,13 @@ is divided into following sections:
         <copy todir="${build.classes.dir}">
             <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
         </copy>
+    </target>
+    <target if="has.persistence.xml" name="-copy-persistence-xml">
+        <mkdir dir="${build.classes.dir}/META-INF"/>
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${meta.inf.dir}" includes="persistence.xml orm.xml"/>
+        </copy>
+    </target>
+    <target name="-post-compile">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
