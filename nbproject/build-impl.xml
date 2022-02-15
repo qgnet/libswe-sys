@@ -967,3 +967,14 @@ is divided into following sections:
         <dirname file="${dist.jar}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
     </target>
+    <target name="-pre-jar">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="init" if="do.archive" name="-do-jar-create-manifest" unless="manifest.available">
+        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
+        <touch file="${tmp.manifest.file}" verbose="false"/>
+    </target>
+    <target depends="init" if="do.archive+manifest.available" name="-do-jar-copy-manifest">
+        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
+        <copy encoding="${manifest.encoding}" file="${manifest.file}" outputencoding="UTF-8" tofile="${tmp.manifest.file}"/>
