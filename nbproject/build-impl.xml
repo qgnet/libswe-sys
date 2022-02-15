@@ -986,3 +986,14 @@ is divided into following sections:
     </target>
     <target depends="init,-do-jar-create-manifest,-do-jar-copy-manifest" if="do.archive+profile.available" name="-do-jar-set-profile">
         <manifest encoding="UTF-8" file="${tmp.manifest.file}" mode="update">
+            <attribute name="Profile" value="${javac.profile}"/>
+        </manifest>
+    </target>
+    <target depends="init,-do-jar-create-manifest,-do-jar-copy-manifest" if="do.archive+splashscreen.available" name="-do-jar-set-splashscreen">
+        <basename file="${application.splash}" property="splashscreen.basename"/>
+        <mkdir dir="${build.classes.dir}/META-INF"/>
+        <copy failonerror="false" file="${application.splash}" todir="${build.classes.dir}/META-INF"/>
+        <manifest encoding="UTF-8" file="${tmp.manifest.file}" mode="update">
+            <attribute name="SplashScreen-Image" value="META-INF/${splashscreen.basename}"/>
+        </manifest>
+    </target>
