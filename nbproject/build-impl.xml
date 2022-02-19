@@ -1013,3 +1013,12 @@ is divided into following sections:
         </pathconvert>
         <condition else="" property="jar.usage.message" value="To run this application from the command line without Ant, try:${line.separator}${platform.java} -cp ${run.classpath.with.dist.jar} ${main.class}">
             <isset property="main.class.available"/>
+        </condition>
+        <condition else="debug" property="jar.usage.level" value="info">
+            <isset property="main.class.available"/>
+        </condition>
+        <echo level="${jar.usage.level}" message="${jar.usage.message}"/>
+    </target>
+    <target depends="-do-jar-copylibs" if="do.archive" name="-do-jar-delete-manifest">
+        <delete>
+            <fileset file="${tmp.manifest.file}"/>
