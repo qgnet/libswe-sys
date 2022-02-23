@@ -1038,3 +1038,13 @@ is divided into following sections:
                 =================
             -->
     <target depends="init,compile" description="Run a main class." name="run">
+        <j2seproject1:java>
+            <customize>
+                <arg line="${application.args}"/>
+            </customize>
+        </j2seproject1:java>
+    </target>
+    <target name="-do-not-recompile">
+        <property name="javac.includes.binary" value=""/>
+    </target>
+    <target depends="init,compile-single" name="run-single">
