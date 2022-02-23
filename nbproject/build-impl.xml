@@ -1048,3 +1048,8 @@ is divided into following sections:
         <property name="javac.includes.binary" value=""/>
     </target>
     <target depends="init,compile-single" name="run-single">
+        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
+        <j2seproject1:java classname="${run.class}"/>
+    </target>
+    <target depends="init,compile-test-single" name="run-test-with-main">
+        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
