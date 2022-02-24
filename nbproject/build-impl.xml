@@ -1077,3 +1077,12 @@ is divided into following sections:
     <target depends="init" if="netbeans.home" name="-debug-start-debugger-stepinto">
         <j2seproject1:nbjpdastart stopclassname="${main.class}"/>
     </target>
+    <target depends="init,compile,-debug-start-debugger-stepinto,-debug-start-debuggee" if="netbeans.home" name="debug-stepinto"/>
+    <target depends="init,compile-single" if="netbeans.home" name="-debug-start-debuggee-single">
+        <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
+        <j2seproject3:debug classname="${debug.class}"/>
+    </target>
+    <target depends="init,compile-single,-debug-start-debugger,-debug-start-debuggee-single" if="netbeans.home" name="debug-single"/>
+    <target depends="init,compile-test-single" if="netbeans.home" name="-debug-start-debuggee-main-test">
+        <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
+        <j2seproject3:debug classname="${debug.class}" classpath="${debug.test.classpath}"/>
