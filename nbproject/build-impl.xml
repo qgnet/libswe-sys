@@ -1062,3 +1062,11 @@ is divided into following sections:
             -->
     <target depends="init" if="netbeans.home" name="-debug-start-debugger">
         <j2seproject1:nbjpdastart name="${debug.class}"/>
+    </target>
+    <target depends="init" if="netbeans.home" name="-debug-start-debugger-main-test">
+        <j2seproject1:nbjpdastart classpath="${debug.test.classpath}" name="${debug.class}"/>
+    </target>
+    <target depends="init,compile" name="-debug-start-debuggee">
+        <j2seproject3:debug>
+            <customize>
+                <arg line="${application.args}"/>
