@@ -1086,3 +1086,17 @@ is divided into following sections:
     <target depends="init,compile-test-single" if="netbeans.home" name="-debug-start-debuggee-main-test">
         <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
         <j2seproject3:debug classname="${debug.class}" classpath="${debug.test.classpath}"/>
+    </target>
+    <target depends="init,compile-test-single,-debug-start-debugger-main-test,-debug-start-debuggee-main-test" if="netbeans.home" name="debug-test-with-main"/>
+    <target depends="init" name="-pre-debug-fix">
+        <fail unless="fix.includes">Must set fix.includes</fail>
+        <property name="javac.includes" value="${fix.includes}.java"/>
+    </target>
+    <target depends="init,-pre-debug-fix,compile-single" if="netbeans.home" name="-do-debug-fix">
+        <j2seproject1:nbjpdareload/>
+    </target>
+    <target depends="init,-pre-debug-fix,-do-debug-fix" if="netbeans.home" name="debug-fix"/>
+    <!--
+                =================
+                PROFILING SECTION
+                =================
