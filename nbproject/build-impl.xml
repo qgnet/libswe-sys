@@ -1100,3 +1100,16 @@ is divided into following sections:
                 =================
                 PROFILING SECTION
                 =================
+            -->
+    <!--
+                pre NB7.2 profiler integration
+            -->
+    <target depends="profile-init,compile" description="Profile a project in the IDE." if="profiler.info.jvmargs.agent" name="-profile-pre72">
+        <fail unless="netbeans.home">This target only works when run from inside the NetBeans IDE.</fail>
+        <nbprofiledirect>
+            <classpath>
+                <path path="${run.classpath}"/>
+            </classpath>
+        </nbprofiledirect>
+        <profile/>
+    </target>
