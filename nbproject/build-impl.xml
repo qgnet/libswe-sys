@@ -1149,3 +1149,11 @@ is divided into following sections:
             <jvmarg line="${profiler.info.jvmargs}"/>
             <test name="${profile.class}"/>
             <classpath>
+                <path path="${run.test.classpath}"/>
+            </classpath>
+            <syspropertyset>
+                <propertyref prefix="test-sys-prop."/>
+                <mapper from="test-sys-prop.*" to="*" type="glob"/>
+            </syspropertyset>
+            <formatter type="brief" usefile="false"/>
+            <formatter type="xml"/>
