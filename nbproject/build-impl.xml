@@ -1179,3 +1179,14 @@ is divided into following sections:
         <startprofiler/>
         <antcall target="run-single"/>
     </target>
+    <target depends="-profile-test-single-pre72" description="Profile a selected test in the IDE." name="profile-test-single"/>
+    <target depends="-profile-check" description="Profile a selected test in the IDE." if="profiler.configured" name="profile-test" unless="profiler.info.jvmargs">
+        <fail unless="test.includes">Must select some files in the IDE or set test.includes</fail>
+        <startprofiler/>
+        <antcall target="test-single"/>
+    </target>
+    <target depends="-profile-check" description="Profile a selected class in the IDE." if="profiler.configured" name="profile-test-with-main">
+        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
+        <startprofiler/>
+        <antcall target="run-test-with-main"/>
+    </target>
