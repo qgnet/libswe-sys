@@ -1343,3 +1343,18 @@ is divided into following sections:
     </target>
     <target depends="init,-pre-debug-fix,-do-debug-fix-test" if="netbeans.home" name="debug-fix-test"/>
     <!--
+                =========================
+                APPLET EXECUTION SECTION
+                =========================
+            -->
+    <target depends="init,compile-single" name="run-applet">
+        <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
+        <j2seproject1:java classname="sun.applet.AppletViewer">
+            <customize>
+                <arg value="${applet.url}"/>
+            </customize>
+        </j2seproject1:java>
+    </target>
+    <!--
+                =========================
+                APPLET DEBUGGING  SECTION
