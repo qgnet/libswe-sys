@@ -1379,3 +1379,12 @@ is divided into following sections:
         <delete file="${built-clean.properties}" quiet="true"/>
     </target>
     <target if="already.built.clean.${basedir}" name="-warn-already-built-clean">
+        <echo level="warn" message="Cycle detected: ProgrammingA4 was already built"/>
+    </target>
+    <target depends="init,-deps-clean-init" name="deps-clean" unless="no.deps">
+        <mkdir dir="${build.dir}"/>
+        <touch file="${built-clean.properties}" verbose="false"/>
+        <property file="${built-clean.properties}" prefix="already.built.clean."/>
+        <antcall target="-warn-already-built-clean"/>
+        <propertyfile file="${built-clean.properties}">
+            <entry key="${basedir}" value=""/>
