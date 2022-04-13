@@ -1400,3 +1400,13 @@ is divided into following sections:
     </target>
     <target depends="init,deps-clean,-do-clean,-post-clean" description="Clean build products." name="clean"/>
     <target name="-check-call-dep">
+        <property file="${call.built.properties}" prefix="already.built."/>
+        <condition property="should.call.dep">
+            <and>
+                <not>
+                    <isset property="already.built.${call.subproject}"/>
+                </not>
+                <available file="${call.script}"/>
+            </and>
+        </condition>
+    </target>
