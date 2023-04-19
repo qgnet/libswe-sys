@@ -16,3 +16,10 @@ public class ProgrammingA4 {
                 }
                 if(p == 0){
                     throw new IllegalArgumentException("change of size 0 is not allowed");
+                }
+///////////////////////////////Initialization of T and Result Arrays//////////////////////////////////
+		int[] Result = new int[a + 1];
+                int[] T = new int[a + 1];
+		T[0] = 0;
+		for (int i = 1; i <= a; i++) {
+			T[i] = Integer.MAX_VALUE-1;
