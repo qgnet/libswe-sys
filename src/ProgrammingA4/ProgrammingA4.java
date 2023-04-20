@@ -23,3 +23,13 @@ public class ProgrammingA4 {
 		T[0] = 0;
 		for (int i = 1; i <= a; i++) {
 			T[i] = Integer.MAX_VALUE-1;
+			Result[i] = -1;
+		}
+///////////////////////////////////Dynamic Algorithm to solve/////////////////////////////////////
+		for (int j = 0; j < change.length; j++){
+			for (int i = 1; i <= a; i++) {
+				if (i >= change[j]) {
+					if (T[i - change[j]] + 1 < T[i]) {
+						T[i] = 1 + T[i - change[j]];
+						Result[i] = j;
+					}
