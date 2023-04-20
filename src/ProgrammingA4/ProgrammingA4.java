@@ -33,3 +33,9 @@ public class ProgrammingA4 {
 						T[i] = 1 + T[i - change[j]];
 						Result[i] = j;
 					}
+				}
+			}
+                }
+		return T[a];
+	}
+}
