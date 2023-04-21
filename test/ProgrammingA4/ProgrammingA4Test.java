@@ -28,3 +28,10 @@ public class ProgrammingA4Test {
 	Assert.assertEquals(0, ProgrammingA4.p(array, total));
     }
     @Test
+    public void test3(){
+        int array[] = {25,10,5,1};
+        int total = 50;
+        int expected[] = {25,25};
+        Assert.assertEquals(2, ProgrammingA4.p(array, total));
+    }
+    @Test
