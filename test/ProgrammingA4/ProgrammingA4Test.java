@@ -17,3 +17,14 @@ public class ProgrammingA4Test {
     @Test(expected = IllegalArgumentException.class)
     public void test1(){
         int array[] = {0,0,0,0};
+        int total = 0;
+	Assert.assertEquals(0, ProgrammingA4.p(array, total));
+    }   
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void test2(){
+        int array[] = {};
+        int total = 0;
+	Assert.assertEquals(0, ProgrammingA4.p(array, total));
+    }
+    @Test
